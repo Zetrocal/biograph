@@ -6,6 +6,24 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background-dark-1: 8, 51, 46;
+  --background-dark-2: 11, 71, 64;
+  --background-dark-3: 12, 87, 78;
+  --background-clear-1: 21, 140, 99;
+  --background-clear-2: 27, 161, 115;
+  --background-clear-3: 32, 189, 135;
+  --fs-xl: clamp(3.25rem, 12vw + 1rem, 12rem);
+  --fs-600: 2rem;
+  --fs-400: 1rem;
+  --fc-1: 255,255,255;
+  
+}
+
+@media (min-width: 40em){
+  :root{
+    --fs-600: 3rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +42,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+*{
+  li{
+    list-style: none;
+  };
+
+  a{
+    text-decoration: none;
+  }
 }
