@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --xright: 0;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -23,6 +24,12 @@
   :root{
     --fs-600: 3rem;
     --fs-400: 1.125rem;
+  }
+}
+
+@media (min-width: 1280px){
+  :root {
+    --xright: 25%;
   }
 }
 

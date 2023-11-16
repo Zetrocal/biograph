@@ -1,0 +1,49 @@
+.navbarApp {
+	background: rgb(var(--background-dark-1));
+    height: 50px;
+    position: relative;
+}
+
+.navbarContainer{
+    display: flex;
+    align-items: center;
+	height: 100%;
+}
+
+.navElements{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+    flex-basis: 800px;
+    margin: auto;
+
+	@media (max-width: 480px) {
+		display: none;
+		flex-direction: column;
+        height: auto;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgb(var(--background-dark-1));
+
+        .navElements li{
+            padding: 10px 50px;
+        }
+	}
+}
+
+.ulMedia{
+    @media (max-width: 480px) {
+		display: flex;
+    }
+}
+
+.burgerContainer{
+	display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+	@media (max-width: 480px) {
+		display: block;
+	}
+}

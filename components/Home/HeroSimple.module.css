@@ -1,0 +1,117 @@
+.imageProfileContainer {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    animation: appear 3s ease-in-out 0s 1 ;
+	
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		scale: 0.5;
+		left: var(--xright)
+	}
+	35% {
+		opacity: 1;
+		scale: 1.1;
+		left: var(--xright)
+	}
+	80%{
+		opacity: 1;
+		scale: 1;
+		left: var(--xright)
+	}
+	100%{
+		opacity: 1;
+		scale: 1;
+		left: 0
+	}
+}
+
+.imageContainer {
+	position: absolute;
+	border-radius: 50%;
+	z-index: 10;
+}
+
+.imageContainerBorder {
+	position: relative;
+	width: 540px;
+	height: 540px;
+	animation: fadingIn 4s ease-out 0s, rotating 5s linear 3s infinite;
+	z-index: 1;
+}
+
+@keyframes rotating {
+	from {
+		rotate: 0 0 1 0deg;
+	}
+	to {
+		rotate: 0 0 1 360deg;
+	}
+}
+
+@keyframes fadingIn {
+	0% {
+		opacity: 0.5;
+		scale: 0.5;
+	}
+	60% {
+		opacity: 0.5;
+		scale: 0.5;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+.halfMoonLeft {
+	position: absolute;
+	height: 540px;
+	width: 540px;
+	box-shadow: -18px 0px 15px -12px rgb(62, 159, 101);
+	border-radius: 50%;
+	transform: translate(-15px, 0px);
+	rotate: 0 0 1 -50deg;
+	background: transparent;
+}
+
+.halfMoonRight {
+	position: absolute;
+	height: 540px;
+	width: 540px;
+	box-shadow: 18px 0px 15px -12px rgb(48, 114, 105);
+	border-radius: 50%;
+	transform: translate(15px, 0px);
+	rotate: 0 0 1 -50deg;
+	background: transparent;
+}
+
+
+.heroTextSection{
+	min-width: 400px;
+	max-width: 800px;
+	line-height: 500;
+	flex: 1;
+	animation: fadingText 4s ease-in-out 0s;
+}
+
+@keyframes fadingText {
+	0% {
+		opacity: 0;
+		scale: 0.5;
+	}
+	70% {
+		opacity: 0;
+		scale: 0.8;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
+}

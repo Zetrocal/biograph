@@ -4,14 +4,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
+import styles from "./NavBar.module.css"
 
 const Navbar: React.FC = (props) => {
 	const [isOpen, setOpen] = useState(false);
 
 	return (
-		<NavbarApp>
-			<NavbarContainer>
-				<NavElements $show={isOpen}>
+		<div className={styles.navbarApp}>
+			<div className={styles.navbarContainer}>
+				<ul className={ isOpen? styles.navElements + " " + styles.ulMedia: styles.navElements}>
 					<li>
 						<Link href="/">Home</Link>
 					</li>
@@ -24,28 +25,17 @@ const Navbar: React.FC = (props) => {
 					<li>
 						<Link href="/contact">Contact</Link>
 					</li>
-				</NavElements>
-			</NavbarContainer>
+				</ul>
+			</div>
 
-			<BurgerContainer>
+			<div className={styles.burgerContainer}>
 				<Burger isOpen={isOpen} setOpen={setOpen} />
-			</BurgerContainer>
-		</NavbarApp>
+			</div>
+		</div>
 	);
 };
 
 export default Navbar;
-
-const NavbarApp = styled.div`
-	background: rgb(var(--background-dark-1));
-    height: 50px;
-    position: relative;
-`;
-
-const NavbarContainer = styled.nav`
-    display: flex;
-    align-items: center;
-`;
 
 const NavElements = styled.ul<{ $show: boolean }>`
 	display: flex;
