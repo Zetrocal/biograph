@@ -5,11 +5,13 @@ import TechHabilities from '@/components/Home/TechHabilities'
 import Footer from '@/components/Footer'
 import HeroSimple from '@/components/Home/HeroSimple'
 import LastProject from '@/components/Home/LastProjects'
+import styles from "./home.module.css"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className={styles.main}>
       <HeroSimple/>
+      <LastProject/>
     </main>
   )
 }

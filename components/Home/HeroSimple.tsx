@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./HeroSimple.module.css"
+import styles from "./Home.module.css"
 
 const HeroSimple: React.FC = (props) => {
 
@@ -19,8 +19,8 @@ const HeroSimple: React.FC = (props) => {
 					</div>
 
 				<div className={styles.heroTextSection}>
-                    <h1 className="text-5xl pb-8">Website Developer</h1>
-                    <p className="text-xl">I’m a frontend developer with experience in React + Typescript + Figma. I worked as a web scrapper developer first from many multilingual
+                    <h1 className="text-5xl pb-8 leading-tight">Website Developer</h1>
+                    <p className="text-xl leading-normal">I’m a frontend developer with experience in React + Typescript + Figma. I worked as a web scrapper developer first from many multilingual
 					selling pages such as Kroger, Jumbo, Amazon since 2021 and then experience working with frontend technologies since 2022. Currently on the
 					path of practicing with full stack technologies such as AWS, Next.js and Django while I perfect my web design and development knowledge</p>
 					

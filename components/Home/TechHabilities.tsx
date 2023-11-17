@@ -1,18 +1,14 @@
 import React, {useState} from "react";
-import styled from "styled-components";
+import styles from "./Home.module.css"
 
 
 const TechHabilities:React.FC  = (props) => {
     return(
-        <TechHabilitiesApp>
+        <div>
             
-        </TechHabilitiesApp>
+        </div>
     );
 }
 
 
 export default TechHabilities;
-
-const TechHabilitiesApp = styled.div`
-
-`
