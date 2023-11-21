@@ -24,7 +24,7 @@ const Hero: React.FC = (props) => {
 					<ImageProfileContainer>
 						<ImageContainer>
 							<motion.div animate={animationProfile} transition={{ duration: 2 }}>
-								<Image src="/profile.jpg" alt="Profile" width={500} height={500} className="rounded-full shadow-white" />
+								<Image src="/shibaInu.png" alt="Profile" width={500} height={500} className="rounded-full shadow-white" />
 							</motion.div>
 						</ImageContainer>
 

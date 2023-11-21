@@ -1,6 +1,6 @@
 import { TSimpleCard } from "@/components/Cards/SimpleCard";
 
-const firstProjects: Array<TSimpleCard> = [
+const latestHabilites: Array<TSimpleCard> = [
 	{
 		name: "Amideleite",
 		image: "/Projects/amideleite.png",
@@ -26,4 +26,4 @@ const firstProjects: Array<TSimpleCard> = [
 	},
 ];
 
-export default firstProjects;
+export default latestHabilites;

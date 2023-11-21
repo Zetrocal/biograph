@@ -12,6 +12,7 @@ export default function Home() {
     <main className={styles.main}>
       <HeroSimple/>
       <LastProject/>
+      <TechHabilities/>
     </main>
   )
 }

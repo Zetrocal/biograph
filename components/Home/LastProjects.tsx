@@ -16,6 +16,4 @@ const LastProject:React.FC  = (props) => {
     );
 }
 
-
 export default LastProject;
-

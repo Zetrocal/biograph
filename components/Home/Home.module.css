@@ -128,15 +128,23 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 1280px;
+	width: 100%;
+	max-width: 1580px;
 	color: white
 }
 
 .titleSection{
 	font-size: var(--fs-600);
+	margin: 50px 0px;
 }
 
 
 .sectionGroup{
 	display: flex;
+	gap: 20px;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding: 20px 0px;
 }

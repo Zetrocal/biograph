@@ -5,10 +5,10 @@ const HeroSimple: React.FC = (props) => {
 
 	return (
 		<div>
-			<div className="HeroSection flex justify-center items-center flex-wrap gap-20">
+			<div className="HeroSection flex justify-center items-center flex-wrap gap-20 p-4">
 					<div className={styles.imageProfileContainer}>
 						<div className={styles.imageContainer}>
-								<Image src="/profile.jpg" alt="Profile" width={500} height={500} className="rounded-full shadow-white" />
+								<Image src="/shibaInu.png" alt="Profile" width={500} height={500} className="rounded-full shadow-white" />
 						</div>
 
 							<div className={styles.imageContainerBorder}>
