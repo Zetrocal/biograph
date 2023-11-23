@@ -1,10 +1,19 @@
 import React, {useState} from "react";
+import CirclePercent from "../CirclePercent/CirclePercent";
+import styles from "./PercentCard.module.css"
 
+export type TPercentCard = {
+    name: string,
+    image: string,
+    percent: number,
+    color: "red"|"yellow"|"green"|"blue"|"purple"|"skyblue"|"orange"|"gray"|"pink"
+}
 
-const PercentCard:React.FC  = (props) => {
+const PercentCard:React.FC<TPercentCard>  = (props) => {
     return(
-        <div>
-            
+        <div className={styles.percentCardContainer}>
+            <CirclePercent {...props}/>
+            <h1 className={styles[props.color]}>{props.name}</h1>
         </div>
     );
 }

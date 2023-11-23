@@ -1,0 +1,40 @@
+.percentCardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.percentCardContainer h1{
+    font-size: 22px;
+    text-shadow: 0px 0px 4px rgba(255,255,255,0.6);
+}
+
+.red{
+    color: rgb(255, 7, 7)
+}
+.yellow{
+    color: rgb(248, 244, 0)
+}
+.green{
+    color: rgb(8, 248, 0)
+}
+.blue{
+    color: rgb(0, 136, 248)
+}
+.purple{
+    color: rgb(149, 0, 248)
+}
+.skyblue{
+    color: rgb(0, 211, 248)
+}
+.orange{
+    color: rgb(248, 99, 0)
+}
+.gray{
+    color: rgb(255, 255, 255)
+}
+.pink{
+    color: rgb(248, 0, 124)
+}
