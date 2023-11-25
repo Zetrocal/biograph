@@ -135,16 +135,16 @@
 
 .titleSection{
 	font-size: var(--fs-600);
-	margin: 50px 0px;
+	margin: 48px 0px;
 }
 
 
 .sectionGroup{
 	display: flex;
-	gap: 40px;
+	gap: 48px;
 	width: 100%;
 	flex-direction: row;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	padding: 20px 0px;
+	padding: 24px 0px;
 }

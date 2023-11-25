@@ -5,8 +5,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 120px 100px;
-    background-image: linear-gradient(to right, rgb(var(--background-dark-0)), black,rgb(var(--background-dark-0)),  black,rgb(var(--background-dark-0)));
     gap: 100px;
     flex-wrap: wrap;
-    
+}
+
+.mainBackground{
+    background-image: linear-gradient(to right, rgb(var(--background-dark-0)), black,rgb(var(--background-dark-1)),  black,rgb(var(--background-dark-0)));
+    min-height: 100vh;
+    position: relative;
 }

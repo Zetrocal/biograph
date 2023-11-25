@@ -1,3 +1,9 @@
+import MainProjects from '@/components/Projects/MainProjects'
+
 export default function Projects(){
-    return <h1>Projects</h1>
+    return (
+        <div className="p-12">
+            <MainProjects/>
+        </div>
+    )
 }

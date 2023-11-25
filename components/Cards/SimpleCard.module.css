@@ -1,3 +1,25 @@
 .projectContainer{
     max-width: 400px;
+    height: 450px;
+    padding: 4px;
+    box-shadow: 0px 0px 8px 1px rgb(var(--background-dark-3 ));
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.projectContainer:hover{
+    scale: 1.05;
+    box-shadow: 0px 0px 16px 4px rgb(var(--background-dark-3 ));
+}
+
+.textProjectContainer{
+    padding: 4px;
+}
+
+.headerSection{
+    margin-bottom: 12px;
+}
+
+.headerSection h2{
+    color: rgb(var(--background-clear-1 ))
 }

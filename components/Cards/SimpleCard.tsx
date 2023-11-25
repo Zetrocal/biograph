@@ -22,11 +22,11 @@ const SimpleCard:React.FC<TSimpleCard>  = ({name, image, title, subtitle, descri
 
             <div className={styles.textProjectContainer}>
                 <div className={styles.headerSection}>
-                    <h2>{title}</h2>
-                    <h3>{subtitle}</h3>
+                    <h2 className="text-2xl">{title}</h2>
+                    <h3 className="text-sm text-neutral-300">{subtitle}</h3>
                 </div>
 
-                <p>
+                <p className="text-base">
                     {description}
                 </p>
             </div>
