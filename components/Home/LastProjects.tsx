@@ -1,14 +1,21 @@
 import SimpleCard from "../Cards/SimpleCard";
 import styles from "./Home.module.css"
-import firstProjects from "@/data/Projects";
 import { TSimpleCard } from "../Cards/SimpleCard";
 
-const LastProject:React.FC  = (props) => {
+const domain = process.env.DOMAIN;
+async function getLastProjects(){
+    let results = await fetch(`${domain}/api/projects?quantity=3`);
+    let data = await results.json();
+    return data
+}
+
+const  LastProject:React.FC  = async (props) => {
+    const data = await getLastProjects();
     return(
         <div className={styles.sectionContent}>
             <h1 className={styles.titleSection}>LAST PROJECTS INVOLVED</h1>
             <div className={styles.sectionGroup}>
-                {firstProjects.map((element:TSimpleCard, index:number) => (
+                {data && data.map((element:TSimpleCard, index:number) => (
                     <SimpleCard {...element} key={element.name}/>
                 ))}
             </div>

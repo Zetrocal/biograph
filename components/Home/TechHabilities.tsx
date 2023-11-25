@@ -5,12 +5,21 @@ import latestHabilites from "@/data/Tech";
 import { TSimpleCard } from "../Cards/SimpleCard";
 import CirclePercent from "../CirclePercent/CirclePercent";
 
-const TechHabilities:React.FC  = (props) => {
+const domain = process.env.DOMAIN;
+async function getLastTechs(){
+    let results = await fetch(`${domain}/api/technologies?quantity=5`);
+    let data = await results.json();
+    return data
+}
+
+const TechHabilities:React.FC  = async (props) => {
+    const data = await getLastTechs();
+
     return(
         <div className={styles.sectionContent}>
             <h1 className={styles.titleSection}>TECH HABILITIES</h1>
             <div className={styles.sectionGroup}>
-                {latestHabilites.map((element:TPercentCard, index:number) => (
+                {data.map((element:TPercentCard, index:number) => (
                     <PercentCard {...element} key={element.name}/>
                 ))}
             </div>
