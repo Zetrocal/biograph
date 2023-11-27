@@ -1,7 +1,8 @@
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
+import { domain } from "@/data/currentDomain";
 
 async function getTechs(){
-    let results = await fetch(`http://127.0.0.1:3000/api/technologies`);
+    let results = await fetch(`${domain}/api/technologies`, { cache: "no-store" });
     let data = await results.json();
     return data
 }

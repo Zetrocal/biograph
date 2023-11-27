@@ -1,9 +1,11 @@
 import SimpleCard from "../Cards/SimpleCard";
 import styles from "./Home.module.css"
 import { TSimpleCard } from "../Cards/SimpleCard";
+import { domain } from "@/data/currentDomain";
+
 
 async function getLastProjects(){
-    let results = await fetch(`http://127.0.0.1:3000/api/projects?quantity=3`);
+    let results = await fetch(`${domain}/api/projects?quantity=3`, { cache: "no-store" });
     let data = await results.json();
     return data
 }

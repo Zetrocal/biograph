@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import styles from "./Home.module.css"
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
+import { domain } from "@/data/currentDomain";
+
 
 async function getLastTechs(){
-    let results = await fetch(`http://127.0.0.1:3000/api/technologies?quantity=5`);
+    let results = await fetch(`${domain}/api/technologies?quantity=5`, { cache: "no-store" });
     let data = await results.json();
     return data
 }
