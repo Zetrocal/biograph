@@ -1,7 +1,6 @@
 import SimpleCard, { TSimpleCard } from "@/components/Cards/SimpleCard";
 import styles from "./MainProjects.module.css"
 
-const domain = process.env.DOMAIN;
 async function getLastProjects(){
     let results = await fetch(`/api/projects`);
     let data = await results.json();
