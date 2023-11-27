@@ -1,10 +1,13 @@
 import SimpleCard from "../Cards/SimpleCard";
 import styles from "./Home.module.css"
+import { headers } from "next/headers";
 import { TSimpleCard } from "../Cards/SimpleCard";
-import { domain } from "@/data/currentDomain";
 
 
 async function getLastProjects(){
+    const host = headers().get("host");
+	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
+	const domain = `${protocal}://${host}`;
     let results = await fetch(`${domain}/api/projects?quantity=3`, { cache: "no-store" });
     let data = await results.json();
     return data

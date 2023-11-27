@@ -1,10 +1,13 @@
+import { headers } from "next/headers";
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
-import { domain } from "@/data/currentDomain";
 
-async function getTechs(){
-    let results = await fetch(`${domain}/api/technologies`, { cache: "no-store" });
-    let data = await results.json();
-    return data
+async function getTechs() {
+	const host = headers().get("host");
+	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
+	const domain = `${protocal}://${host}`;
+	let results = await fetch(`${domain}/api/technologies`, { cache: "no-store" });
+	let data = await results.json();
+	return data;
 }
 
 const ProjectsContainer: React.FC = async (props) => {
@@ -17,9 +20,9 @@ const ProjectsContainer: React.FC = async (props) => {
 			</div>
 
 			<div className="flex gap-8 flex-wrap justify-center">
-			{data.map((element:TPercentCard, index:number) => (
-                    <PercentCard {...element} key={element.name}/>
-                ))}
+				{data.map((element: TPercentCard, index: number) => (
+					<PercentCard {...element} key={element.name} />
+				))}
 			</div>
 		</div>
 	);

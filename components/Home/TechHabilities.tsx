@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import styles from "./Home.module.css"
+import { headers } from "next/headers";
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
-import { domain } from "@/data/currentDomain";
 
 
 async function getLastTechs(){
+    const host = headers().get("host");
+	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
+	const domain = `${protocal}://${host}`;
     let results = await fetch(`${domain}/api/technologies?quantity=5`, { cache: "no-store" });
     let data = await results.json();
     return data
