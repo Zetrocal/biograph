@@ -3,7 +3,7 @@ import styles from "./MainProjects.module.css"
 
 const domain = process.env.DOMAIN;
 async function getLastProjects(){
-    let results = await fetch(`${domain}/api/projects`);
+    let results = await fetch(`/api/projects`);
     let data = await results.json();
     return data
 }

@@ -1,10 +1,8 @@
-import Image from "next/image";
-import styles from "./About.module.css";
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
 
 const domain = process.env.DOMAIN;
 async function getTechs(){
-    let results = await fetch(`${domain}/api/technologies`);
+    let results = await fetch(`/api/technologies`);
     let data = await results.json();
     return data
 }

@@ -2,9 +2,8 @@ import SimpleCard from "../Cards/SimpleCard";
 import styles from "./Home.module.css"
 import { TSimpleCard } from "../Cards/SimpleCard";
 
-const domain = process.env.DOMAIN;
 async function getLastProjects(){
-    let results = await fetch(`${domain}/api/projects?quantity=3`);
+    let results = await fetch(`/api/projects?quantity=3`);
     let data = await results.json();
     return data
 }

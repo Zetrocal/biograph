@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import styles from "./Home.module.css"
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
 
-const domain = process.env.DOMAIN;
 async function getLastTechs(){
-    let results = await fetch(`${domain}/api/technologies?quantity=5`);
+    let results = await fetch(`/api/technologies?quantity=5`);
     let data = await results.json();
     return data
 }
