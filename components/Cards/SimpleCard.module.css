@@ -5,6 +5,7 @@
     box-shadow: 0px 0px 8px 1px rgb(var(--background-dark-3 ));
     transition: all 0.15s ease-in-out;
     cursor: pointer;
+    animation: appear 0.2s ease-in-out 0s ;
 }
 
 .projectContainer:hover{
@@ -22,4 +23,15 @@
 
 .headerSection h2{
     color: rgb(var(--background-clear-1 ))
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        scale: 0.8;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
 }

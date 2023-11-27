@@ -1,0 +1,30 @@
+.imageSection{
+    flex-basis: 600px;
+    display: flex;
+    justify-content: center;
+    animation: appear 0.2s ease-in-out 0s ;
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        scale: 0.8;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.descriptionSection{
+    width: clamp(400px, 40vw, 700vw);
+    padding: 48px 12px;
+}
+
+.headerSection{
+    padding: 20px 0px;
+}
+
+.description p{
+    text-align: justify;
+}
