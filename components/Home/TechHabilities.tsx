@@ -3,7 +3,7 @@ import styles from "./Home.module.css"
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
 
 async function getLastTechs(){
-    let results = await fetch(`/api/technologies?quantity=5`);
+    let results = await fetch(`http://127.0.0.1:3000/api/technologies?quantity=5`);
     let data = await results.json();
     return data
 }

@@ -2,7 +2,7 @@ import SimpleCard, { TSimpleCard } from "@/components/Cards/SimpleCard";
 import styles from "./MainProjects.module.css"
 
 async function getLastProjects(){
-    let results = await fetch(`/api/projects`);
+    let results = await fetch(`http://127.0.0.1:3000/api/projects`);
     let data = await results.json();
     return data
 }
