@@ -4,11 +4,12 @@ import { headers } from "next/headers";
 
 
 async function getLastProjects(){
-    const host = headers().get("host");
+    /* const host = headers().get("host");
 	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
 	const domain = `${protocal}://${host}`;
     let results = await fetch(`${domain}/api/projects`, { cache: "no-store" });
-    let data = await results.json();
+    let data = await results.json(); */
+    let data:any = [];
     return data
 }
 
