@@ -1,3 +1,5 @@
+"use client"
+
 import React, {useState} from "react";
 import styles from "./Home.module.css"
 import { headers } from "next/headers";
