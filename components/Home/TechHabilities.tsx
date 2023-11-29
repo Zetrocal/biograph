@@ -1,12 +1,12 @@
 "use client"
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./Home.module.css"
 import { headers } from "next/headers";
 import PercentCard, { TPercentCard } from "../Cards/PercentCard";
 
 
-async function getLastTechs(){
+/* async function getLastTechs(){
     const host = headers().get("host");
 	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
 	const domain = `${protocal}://${host}`;
@@ -22,7 +22,19 @@ async function getLastTechs(){
 }
 
 const TechHabilities:React.FC  = async (props) => {
-    const data = await getLastTechs();
+    const data = await getLastTechs(); */
+
+const TechHabilities:React.FC  =  (props) => {
+
+    let [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch(`/api/technologies?quantity=5`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            setData(jsonData)
+        });
+    }, [])
 
     return(
         <div className={styles.sectionContent + " mb-12"}>
