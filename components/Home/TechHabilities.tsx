@@ -11,7 +11,7 @@ async function getLastTechs(){
     let results = await fetch(`${domain}/api/technologies?quantity=5`, { cache: "no-store" });
     let data:any = [];
     try{
-    let data = await results.json();
+    data = await results.json();
     } catch(error){
         console.log(results)
     }
