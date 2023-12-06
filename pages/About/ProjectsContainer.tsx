@@ -1,18 +1,18 @@
 import { headers } from "next/headers";
-import PercentCard, { TPercentCard } from "../Cards/PercentCard";
+import PercentCard, { TPercentCard } from "../../components/Cards/PercentCard";
+import { getTechnologies } from "@/services/technologies";
 
-async function getTechs() {
-	/* const host = headers().get("host");
+/* async function getTechs() {
+	const host = headers().get("host");
 	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
 	const domain = `${protocal}://${host}`;
 	let results = await fetch(`${domain}/api/technologies`, { cache: "no-store" });
-	let data = await results.json(); */
-	let data:any = [];
+	let data = await results.json();
 	return data;
-}
+} */
 
 const ProjectsContainer: React.FC = async (props) => {
-	const data = await getTechs();
+	const data = await getTechnologies();
 
 	return (
 		<div className="p-10 mb-12">

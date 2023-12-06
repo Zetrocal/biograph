@@ -1,4 +1,4 @@
-import MainProjects from '@/components/Projects/MainProjects'
+import MainProjects from '@/pages/Projects/MainProjects'
 
 export default function Projects(){
     return (

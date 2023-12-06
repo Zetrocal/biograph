@@ -1,10 +1,8 @@
-"use client"
 
-import React, {useState, useEffect} from "react";
-import styles from "./Home.module.css"
+import styles from "./Home.module.css";
 import { headers } from "next/headers";
-import PercentCard, { TPercentCard } from "../Cards/PercentCard";
-
+import PercentCard, { TPercentCard } from "../../components/Cards/PercentCard";
+import { getTechnologies } from "@/services/technologies";
 
 /* async function getLastTechs(){
     const host = headers().get("host");
@@ -24,7 +22,7 @@ import PercentCard, { TPercentCard } from "../Cards/PercentCard";
 const TechHabilities:React.FC  = async (props) => {
     const data = await getLastTechs(); */
 
-const TechHabilities:React.FC  =  (props) => {
+/* const TechHabilities:React.FC  =  (props) => {
 
     let [data, setData] = useState([]);
 
@@ -34,19 +32,21 @@ const TechHabilities:React.FC  =  (props) => {
         .then((jsonData) => {
             setData(jsonData)
         });
-    }, [])
+    }, []) */
 
-    return(
-        <div className={styles.sectionContent + " mb-12"}>
-            <h1 className={styles.titleSection}>TECH HABILITIES</h1>
-            <div className={styles.sectionGroup}>
-                {data.map((element:TPercentCard, index:number) => (
-                    <PercentCard {...element} key={element.name}/>
-                ))}
-            </div>
-        </div>
-    );
-}
-
+const TechHabilities: React.FC = async (props) => {
+	const data = await getTechnologies(3);
+    
+	return (
+		<div className={styles.sectionContent + " mb-12"}>
+			<h1 className={styles.titleSection}>TECH HABILITIES</h1>
+			<div className={styles.sectionGroup}>
+				{data && data.map((element: TPercentCard, index: number) => (
+					<PercentCard {...element} key={element.name} />
+				))}
+			</div>
+		</div>
+	);
+};
 
 export default TechHabilities;

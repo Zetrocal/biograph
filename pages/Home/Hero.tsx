@@ -1,12 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 const Hero: React.FC = (props) => {
+
+	const [mountState, setMountState] = useState(false)
+	useEffect(() => {
+		setMountState(true);
+	}, [])
+
 	const animationProfile = {
 		opacity: [0, 1, 1],
 		scale: [0.5, 1.1, 1],
@@ -17,9 +22,14 @@ const Hero: React.FC = (props) => {
 		scale: [0.5, 1],
 	};
 
+	const softAnimation = {
+		opacity: [0, 1],
+		scale: [0.8, 1],
+	}
+
 	return (
 		<HeroApp>
-			<div className="HeroSection flex justify-center items-center flex-wrap">
+			<div className="HeroSection flex justify-center items-center flex-wrap gap-20 p-4" style={{opacity: mountState? "1": "0"}}>
 				<motion.div initial={{ x: "var(--xright)" }} animate={{ x: 0 }} transition={{ duration: 1.4, delay: 2 }}>
 					<ImageProfileContainer>
 						<ImageContainer>
@@ -36,13 +46,19 @@ const Hero: React.FC = (props) => {
 							</ImageContainerBorder>
 						</motion.div>
 					</ImageProfileContainer>
-				</motion.div> 
+				</motion.div>
 
-				<div className="w-32 h-10 flex-1">
-					I’m a frontend developer with experience in React + Typescript + Figma. I worked as a web scrapper developer first from many multilingual
-					selling pages such as Kroger, Jumbo, Amazon since 2021 and then experience working with frontend technologies since 2022. Currently on the
-					path of practicing with full stack technologies such as AWS, Next.js and Django while I perfect my web design and development knowledge
-				</div>
+				<motion.div animate={softAnimation} transition={{ duration: 1.4 , delay: 2.6}} >
+					<HeroTextSection >
+						<h1 className="text-5xl pb-8 leading-tight">Website Developer</h1>
+						<p className="text-xl leading-normal">
+							I’m a frontend developer with experience in React + Typescript + Figma. I worked as a web scrapper developer first from many
+							multilingual selling pages such as Kroger, Jumbo, Amazon since 2021 and then experience working with frontend technologies since
+							2022. Currently on the path of practicing with full stack technologies such as AWS, Next.js and Django while I perfect my web design
+							and development knowledge
+						</p>
+					</HeroTextSection>
+				</motion.div>
 			</div>
 		</HeroApp>
 	);
@@ -65,7 +81,6 @@ const ImageContainer = styled.div`
 	position: absolute;
 	border-radius: 50%;
 	z-index: 10;
-    
 `;
 
 const ImageContainerBorder = styled.div`
@@ -108,4 +123,17 @@ const HalfMoonRight = styled.div`
 	transform: translate(15px, 0px);
 	rotate: 0 0 1 -50deg;
 	background: transparent;
+`;
+
+const HeroTextSection = styled.div`
+	min-width: 400px;
+	max-width: 800px;
+	line-height: 500;
+	flex: 1;
+	animation: fadingText 4s ease-in-out 0s;
+
+	h1 {
+		color: rgb(var(--background-clear-2));
+		text-shadow: rgb(var(--background-clear-3), 0.5) 1px 0px 10px;
+	}
 `;

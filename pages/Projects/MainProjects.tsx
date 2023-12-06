@@ -1,20 +1,20 @@
 import SimpleCard, { TSimpleCard } from "@/components/Cards/SimpleCard";
 import styles from "./MainProjects.module.css"
 import { headers } from "next/headers";
+import { getProjects } from "@/services/projects";
 
 
-async function getLastProjects(){
-    /* const host = headers().get("host");
+/* async function getLastProjects(){
+    const host = headers().get("host");
 	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
 	const domain = `${protocal}://${host}`;
     let results = await fetch(`${domain}/api/projects`, { cache: "no-store" });
-    let data = await results.json(); */
-    let data:any = [];
+    let data = await results.json(); 
     return data
-}
+} */
 
 export default async function Projects(){
-    const data = await getLastProjects();
+    const data = await getProjects();
     return (
         <div className="p-12">
             <div className={styles.sectionGroup}>
