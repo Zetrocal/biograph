@@ -1,15 +1,7 @@
-import { headers } from "next/headers";
-import PercentCard, { TPercentCard } from "../../components/Cards/PercentCard";
+
+import PercentCard, { TPercentCard } from "@/components/Cards/PercentCard";
 import { getTechnologies } from "@/services/technologies";
 
-/* async function getTechs() {
-	const host = headers().get("host");
-	const protocal = process?.env.NODE_ENV === "development" ? "http" : "https";
-	const domain = `${protocal}://${host}`;
-	let results = await fetch(`${domain}/api/technologies`, { cache: "no-store" });
-	let data = await results.json();
-	return data;
-} */
 
 const ProjectsContainer: React.FC = async (props) => {
 	const data = await getTechnologies();
@@ -22,7 +14,7 @@ const ProjectsContainer: React.FC = async (props) => {
 
 			<div className="flex gap-8 flex-wrap justify-center">
 				{data.map((element: TPercentCard, index: number) => (
-					<PercentCard {...element} key={element.name} />
+					<PercentCard name={element.name} image={element.image} percent={element.percent} color={element.color} key={element.name} />
 				))}
 			</div>
 		</div>

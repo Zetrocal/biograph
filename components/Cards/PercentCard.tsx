@@ -3,12 +3,11 @@ import CirclePercent from "../CirclePercent/CirclePercent";
 import styles from "./PercentCard.module.css"
 
 export type TPercentCard = {
-    id: number;
     name: string;
     image: string;
     percent: number;
     color: string;
-    date: Date;}
+}
 
 const PercentCard:React.FC<TPercentCard>  = (props) => {
     return(

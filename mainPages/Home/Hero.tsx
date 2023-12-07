@@ -81,6 +81,9 @@ const ImageContainer = styled.div`
 	position: absolute;
 	border-radius: 50%;
 	z-index: 10;
+	img{
+		border-radius: 50%;
+	}
 `;
 
 const ImageContainerBorder = styled.div`
@@ -128,7 +131,7 @@ const HalfMoonRight = styled.div`
 const HeroTextSection = styled.div`
 	min-width: 400px;
 	max-width: 800px;
-	line-height: 500;
+	
 	flex: 1;
 	animation: fadingText 4s ease-in-out 0s;
 

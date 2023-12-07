@@ -1,5 +1,5 @@
-import Presentation from "@/pages/About/Presentation"
-import ProjectsContainer from "@/pages/About/ProjectsContainer"
+import Presentation from "@/mainPages/About/Presentation"
+import ProjectsContainer from "@/mainPages/About/ProjectsContainer"
 
 export default function About(){
     return (
