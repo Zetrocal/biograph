@@ -12,13 +12,13 @@ const Navbar: React.FC = (props) => {
 		<div className={styles.navbarApp}>
 			<div className={styles.navbarContainer}>
 				<ul className={ isOpen? `${styles.navElements} ${styles.ulMedia}` : styles.navElements}>
-					<li>
+					<li className={styles.option}>
 						<Link href="/">Home</Link>
 					</li>
-					<li>
+					<li className={styles.option}>
 						<Link href="/projects">Projects</Link>
 					</li>
-					<li>
+					<li className={styles.option}>
 						<Link href="/about">About</Link>
 					</li>
 				</ul>

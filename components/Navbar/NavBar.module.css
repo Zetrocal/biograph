@@ -47,3 +47,9 @@
 		display: block;
 	}
 }
+
+.option:hover{
+    scale: 1.1;
+    color: rgb(var(--background-clear-2));
+    transition: all 0.1s linear ;
+}

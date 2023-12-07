@@ -30,7 +30,8 @@
 
 @media (min-width: 1280px){
   :root {
-    --xright: 60%;
+    /* --xright: 60%; */
+    --xright: 28%;
   }
 }
 

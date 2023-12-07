@@ -17,6 +17,7 @@ const SimpleCard:React.FC<TSimpleCard>  = ({name, image, title, subtitle, descri
                     alt={name}
                     width={400}
                     height={250}
+                    loading="lazy"
                 />
             </div>
 

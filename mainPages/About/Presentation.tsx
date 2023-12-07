@@ -11,6 +11,7 @@ const Presentation:React.FC  = (props) => {
                     alt="Profile"
                     width={400}
                     height={700}
+					loading="lazy"
                 />
 			</div>
 
