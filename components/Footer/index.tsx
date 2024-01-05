@@ -3,9 +3,10 @@ import { faFacebook, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg
 
 const Footer:React.FC  = (props) => {
     return(
-        <div className='flex justify-evenly p-8 absolute bottom-0 w-full'>
-            <span className='justify-evenly'>
-                <p>© 2023 Biographic page, by Damian Cortez.</p>
+        <div className='flex justify-evenly p-8 absolute bottom-0 w-full gap-1 sm:text-base text-xs'>
+            <span className='justify-evenly flex flex-wrap text-center items-center'>
+                <p>© 2023 Biographic page,&nbsp;</p>
+                <p>by Damian Cortez.</p>
             </span>
 
             <span className='flex items-center justify-evenly text-emerald-400 gap-4'>

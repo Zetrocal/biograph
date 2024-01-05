@@ -8,18 +8,20 @@ import styles from "./NavBar.module.css"
 const Navbar: React.FC = (props) => {
 	const [isOpen, setOpen] = useState(false);
 
+	function closeMenu(){ setOpen(false)}
+
 	return (
 		<div className={styles.navbarApp}>
 			<div className={styles.navbarContainer}>
 				<ul className={ isOpen? `${styles.navElements} ${styles.ulMedia}` : styles.navElements}>
 					<li className={styles.option}>
-						<Link href="/">Home</Link>
+						<Link href="/" onClick={closeMenu}>Home</Link>
 					</li>
 					<li className={styles.option}>
-						<Link href="/projects">Projects</Link>
+						<Link href="/projects" onClick={closeMenu}>Projects</Link>
 					</li>
 					<li className={styles.option}>
-						<Link href="/about">About</Link>
+						<Link href="/about" onClick={closeMenu}>About</Link>
 					</li>
 				</ul>
 			</div>

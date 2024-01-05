@@ -7,7 +7,7 @@ export default async function Projects() {
 	const data = await getProjects();
 	
     return (
-		<div className="p-12">
+		<div className="md:p-14 p-4 py-14">
 			<div className={styles.sectionGroup}>
 				{data.map((element: TSimpleCard, index: number) => (
 						<SimpleCard

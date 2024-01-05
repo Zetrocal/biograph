@@ -5,30 +5,50 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    animation: appear 3s ease-in-out 0s 1 ;
 	
+
+	@media (max-width: 768px) {
+		width: 65vw;
+		height: 65vw;
+	}
+}
+
+.HeroImageContainer {
+	animation: appear 3s ease-in-out 0s 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	width: 650px;
+	height: 650px;
+
+	@media (max-width: 768px) {
+		width: 80vw;
+		height: 80vw;
+	}
 }
 
 @keyframes appear {
 	0% {
 		opacity: 0;
 		scale: 0.5;
-		left: var(--xright)
+		left: var(--xright);
 	}
 	35% {
 		opacity: 1;
 		scale: 1.1;
-		left: var(--xright)
+		left: var(--xright);
 	}
-	80%{
+	80% {
 		opacity: 1;
 		scale: 1;
-		left: var(--xright)
+		left: var(--xright);
 	}
-	100%{
+	100% {
 		opacity: 1;
 		scale: 1;
-		left: 0
+		left: 0;
 	}
 }
 
@@ -36,12 +56,14 @@
 	position: absolute;
 	border-radius: 50%;
 	z-index: 10;
+	width: 90%;
+	height: 90%;
 }
 
 .imageContainerBorder {
 	position: relative;
-	width: 540px;
-	height: 540px;
+	width: 92%;
+	height: 92%;
 	animation: fadingIn 4s ease-out 0s, rotating 5s linear 3s infinite;
 	z-index: 1;
 }
@@ -72,8 +94,8 @@
 
 .halfMoonLeft {
 	position: absolute;
-	height: 540px;
-	width: 540px;
+	height: 100%;
+	width: 100%;
 	box-shadow: -18px 0px 15px -12px rgb(62, 159, 101);
 	border-radius: 50%;
 	transform: translate(-15px, 0px);
@@ -83,8 +105,8 @@
 
 .halfMoonRight {
 	position: absolute;
-	height: 540px;
-	width: 540px;
+	height: 100%;
+	width: 100%;
 	box-shadow: 18px 0px 15px -12px rgb(48, 114, 105);
 	border-radius: 50%;
 	transform: translate(15px, 0px);
@@ -92,20 +114,21 @@
 	background: transparent;
 }
 
-
-.heroTextSection{
+.heroTextSection {
 	min-width: 400px;
 	max-width: 800px;
 	line-height: 1;
 	flex: 1;
 	animation: fadingText 4s ease-in-out 0s;
 
-	
+	@media (max-width: 480px) {
+		min-width: 80vw;
+	}
 }
 
-.heroTextSection h1{
+.heroTextSection h1 {
 	color: rgb(var(--background-clear-2));
-	text-shadow: rgb(var(--background-clear-3),0.5) 1px 0px 10px;
+	text-shadow: rgb(var(--background-clear-3), 0.5) 1px 0px 10px;
 }
 
 @keyframes fadingText {
@@ -123,23 +146,26 @@
 	}
 }
 
-.sectionContent{
+.sectionContent {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	max-width: 1580px;
-	color: white
+	color: white;
 }
 
-.titleSection{
+.titleSection {
 	font-size: var(--fs-600);
 	margin: 48px 0px;
+	text-align: center;
+	@media (max-width: 768px) {
+		font-size: var(--fs-550);
+	}
 }
 
-
-.sectionGroup{
+.sectionGroup {
 	display: flex;
 	gap: 48px;
 	width: 100%;

@@ -7,6 +7,15 @@
     padding: 120px 100px;
     gap: 100px;
     flex-wrap: wrap;
+
+    @media (max-width: 1024px) {
+        padding: 80px 40px;
+    };
+
+    @media (max-width: 480px) {
+        padding: 30px 10px;
+        gap: 40px;
+    }
 }
 
 .mainBackground{

@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 
 const Presentation:React.FC  = (props) => {
     return(
-        <div className="flex justify-center items-center p-10 flex-wrap">
+        <div className="flex justify-center items-center md:p-10 flex-wrap p-2">
 
             <div className={styles.imageSection}>
 				<Image 
@@ -17,13 +17,13 @@ const Presentation:React.FC  = (props) => {
 
 			<div className={styles.descriptionSection}>
 				<div className={styles.headerSection}>
-					<h1 className="text-4xl ">Damian Cortez Candia</h1>
-					<h2 className="text-sm text-neutral-300">Electronic Engineer | Web Developer</h2>
-					<h3 className="text-sm text-neutral-300">Cochabamba - Bolivia</h3>
+					<h1 className="md:text-4xl text-2xl">Damian Cortez Candia</h1>
+					<h2 className="md:text-sm text-xs text-neutral-300">Electronic Engineer | Web Developer</h2>
+					<h3 className="md:text-sm text-xs text-neutral-300">Cochabamba - Bolivia</h3>
 				</div>
 
 				<div className={styles.description}>
-					<p>
+					<p className="md:text-base text-sm">
 						Hello Everyone! I am Damian, an enthusiastic and driven individual with a degree in Electronics Engineering. My journey has taken me
 						into the dynamic realm of front-end development, where I've honed my skills and cultivated a passion for crafting seamless user
 						experiences. With an upper-intermediate proficiency in English, I embrace challenges in fast-paced environments. My aspiration is to
