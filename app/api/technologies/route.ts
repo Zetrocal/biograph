@@ -19,6 +19,7 @@ export async function GET(request: Request) {
 			date: "desc",
 		},
 		select: {
+			id:true,
 			name: true,
 			image: true,
 			percent: true,
@@ -107,14 +108,134 @@ export async function POST(request: Request) {
 				posts: data,
 			},
 		});
-	}
-
-	else{
+	} else {
 		return NextResponse.json({
 			error: {
 				code: 400,
 				message: "Invalid passKey code",
-				target: "/api/technology"
+				target: "/api/technology",
+			},
+		});
+	}
+}
+
+export async function PUT(request: Request) {
+	let data = await request.json();
+	let { searchParams } = new URL(request.url);
+	let passKey = searchParams ? searchParams.get("passKey") : null;
+
+	
+
+	if (passKey && passKey == postKey) {
+		
+		try {
+			if (data && typeof data === "object") {
+				
+				let selectedItem = await prisma.technology.findFirstOrThrow({
+					where:{
+						name: data.name
+					}
+				})
+				console.log("updating prisma")
+
+				await prisma.technology.updateMany({
+					where: {
+						name: data.name
+					},
+					data:{
+						name: data.name,
+						image: data.image || selectedItem.image,
+						percent: data.percent || selectedItem.percent,
+						color: data.color || selectedItem.color,
+						date: new Date(),
+					}
+				})
+			}
+		} catch (error: any) {
+			return NextResponse.json({
+				error: {
+					code: 400,
+					message: "Request payload is invalid",
+					target: "/api/technology",
+					details: [
+						{
+							code: 400,
+							message: error.message,
+						},
+					],
+				},
+			});
+		}
+
+		return NextResponse.json({
+			status: "success",
+			data: {
+				posts: data,
+			},
+		});
+	} else {
+		return NextResponse.json({
+			error: {
+				code: 400,
+				message: "Invalid passKey code",
+				target: "/api/technology",
+			},
+		});
+	}
+}
+
+
+export async function DELETE(request: Request) {
+
+	let data = await request.json();
+	let { searchParams } = new URL(request.url);
+	let passKey = searchParams ? searchParams.get("passKey") : null;
+
+	if (passKey && passKey == postKey) {
+		
+		try {
+			if (data && typeof data === "object") {
+				
+				await prisma.technology.findFirstOrThrow({
+					where:{
+						id: data.id
+					}
+				})
+
+				await prisma.technology.delete({
+					where: {
+						id: data.id
+					}
+				})
+			}
+		} catch (error: any) {
+			return NextResponse.json({
+				error: {
+					code: 400,
+					message: "Request payload is invalid",
+					target: "/api/technology",
+					details: [
+						{
+							code: 400,
+							message: error.message,
+						},
+					],
+				},
+			});
+		}
+
+		return NextResponse.json({
+			status: "success",
+			data: {
+				posts: data,
+			},
+		});
+	} else {
+		return NextResponse.json({
+			error: {
+				code: 400,
+				message: "Invalid passKey code",
+				target: "/api/technology",
 			},
 		});
 	}
